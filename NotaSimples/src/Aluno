@@ -1,0 +1,14 @@
+import React, {Component} from 'react';
+import {View,Text} from 'react-native';
+
+function media(n1,n2){
+  var m=(parseFloat(n1)+parseFloat(n2))/2
+  return<Text>{m}</Text>
+}
+
+export default function(props){
+  return <View>
+    <Text> Media      {media(props.nota1,props.nota2)} </Text>
+
+    </View>
+}
