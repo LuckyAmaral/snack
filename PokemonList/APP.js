@@ -1,10 +1,10 @@
 import React from 'react';
-import {Button, View, Text} from 'react-native';
+import {Button, ScrollView, Text} from 'react-native';
 export default class Lista extends React.Component {
   constructor (props) {
     super(props);
     this.state = {dados: []};
-    fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151.json')
+    fetch('https://pokeapi.co/api/v2/pokemon/?limit=151&offset=0')
       .then((response) => response.json())
       .then((responseJson) => {
         //Success 
@@ -18,7 +18,7 @@ export default class Lista extends React.Component {
 }
 render() {
     return(
-      <View> 
+      <ScrollView> 
         <Text>Lista de Pokemons</Text>
         {
           this.state.dados.map((l,i) => (
@@ -27,7 +27,7 @@ render() {
             </Text>
           ))
         }
-      </View>
+      </ScrollView>
     )
   }
 
