@@ -1,0 +1,56 @@
+import React from 'react';
+import { View, Text } from 'react-native';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+
+function Home() {
+  return (
+    <View>
+      <Text>Home</Text>
+    </View>
+  );
+}
+
+function Pagina1() {
+  return (
+    <View>
+      <Text>Página 1</Text>
+    </View>
+  );
+}
+
+function Pagina2() {
+  return (
+    <View>
+      <Text>Página 2</Text>
+    </View>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        
+        <Tab.Screen 
+          name="Home" 
+          component={Home} 
+        />
+
+        <Tab.Screen 
+          name="Pagina1" 
+          component={Pagina1} 
+        />
+
+        <Tab.Screen 
+          name="Pagina2" 
+          component={Pagina2} 
+        />
+
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
